@@ -327,12 +327,7 @@ MariaDB [(none)]> create user 'ubuntuServ' identified by 'ubuntuServ';
 Query OK, 0 rows affected (0.00 sec)
 MariaDB [(none)]> create database tortillaDB;
 Query OK, 1 row affected (0.00 sec)
-MariaDB [(none)]> grant all on tortillaDB.* to ubuntuServ@10.0.0.11 identified by 'ubuntuServ';
-Query OK, 0 rows affected (0.00 sec)
-MariaDB [(none)]> grant all on tortillaDB.* to ubuntuServ@10.0.0.12  identified by 'ubuntuServ';
-Query OK, 0 rows affected (0.00 sec)
-MariaDB [(none)]> grant all on tortillaDB.* to ubuntuServ@10.0.0.5 identified by 'ubuntuServ';
-Query OK, 0 rows affected (0.00 sec)
+MariaDB [(none)]> GRANT USAGE ON *.* TO 'ubuntuServ'@'%' IDENTIFIED BY 'ubuntuServ';
 ~~~
 
 
