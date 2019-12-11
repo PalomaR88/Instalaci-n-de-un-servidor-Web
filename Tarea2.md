@@ -1,4 +1,4 @@
-**Tarea 2) Instalación de un servidor Web (SERVICIOS)**
+# Instalación de un servidor Web
 
 Ante de realizar la instalación del servidor web vamos a configurar el nombre de nuestras máquinas, para ello:
 
@@ -11,6 +11,7 @@ Ante de realizar la instalación del servidor web vamos a configurar el nombre d
 
 Comprueba que los servidores tienen configurados el nuevo nombre de dominio de forma adecuada después de volver a reiniciar el servidor (o tomar una nueva configuración DHCP). Para que el servidor tenga el FQDN debes tener configurado de forma correcta el parámetro domain en el fichero /etc/resolv.conf, además debemos evitar que este fichero se sobreescriba con los datos que manda el servidor DHCP de OpenStack. Quizás sea buena idea mirar la configuración de cloud-init. Documenta la configuración que has tenido que modificar y muestra el contenido del fichero /etc/resolv.conf y la salida del comando hostname -f después de un reinicio.
 
+## Configuración inicial
 ### En Debian-croqueta
 Configuracion /etc/hostname:
 ~~~
@@ -127,7 +128,7 @@ nameserver 192.168.202.2
 
 
 
-**Servidor Web**
+## Servidor Web
 En salmorejo (CentOs 7) vamos a instalar un servidor web nginx. Configura el servidor para que sea capaz de ejecutar código php (para ello vamos a usar un servidor de aplicaciones php-fpm). Entrega una captura de pantalla accediendo a www.tunombre.gonzalonazareno.org/info.php donde se vea la salida del fichero info.php.
 
 En primer lugar se añade el repositorio epel:
@@ -227,11 +228,11 @@ Se comprueba el funcionamiento:
 
 
 
-**Servidor de base de datos**
+## Servidor de base de datos
 
 En tortilla (Ubuntu) vamos a instalar un servidor de base de datos mariadb. Entrega una prueba de funcionamiento donde se vea como se realiza una conexión a la base de datos desde los otros dos equipos.
 
-## En tortilla
+### En el servidor-tortilla
 Se comienza instalando el gestor de bases de datos:
 ~~~
 ubuntu@tortilla:~$ sudo apt install mariadb-server
@@ -331,7 +332,7 @@ MariaDB [(none)]> GRANT USAGE ON *.* TO 'ubuntuServ'@'%' IDENTIFIED BY 'ubuntuSe
 ~~~
 
 
-## En croqueta
+### En el cliente-croqueta
 
 Se instala el paquete cliente de MariaDB:
 ~~~
@@ -354,7 +355,7 @@ MariaDB [tortillaDB]>
 ~~~
 
 
-## En salmorejo
+### En el cliente-salmorejo
 
 Se instala el cliente de MariaDB:
 ~~~
